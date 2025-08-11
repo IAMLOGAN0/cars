@@ -124,15 +124,20 @@ async function startServer() {
     if (!_isLambdaEnvironment) {
       const httpServer = http.createServer(app);
 
-      // Global error handler (should be before server listen)
+      // Global error handler
       app.use(errorHandler);
 
-      console.log(`App port is ${_appPort}`);
+      // Use Railway's PORT, fallback to _appPort if running locally
+      const PORT = process.env.PORT || _appPort || 3000;
+      const HOST = '0.0.0.0'; // Important for Railway
 
-      httpServer.listen(_appPort, () => {
-        console.log(`HTTP Server Started At ${_appProtocol}://${_appUrl}:${_appPort}`);
+      console.log(`App port is ${PORT}`);
+
+      httpServer.listen(PORT, HOST, () => {
+        console.log(`HTTP Server Started At ${_appProtocol}://${_appUrl}:${PORT}`);
       });
     }
+
   } catch (error) {
     console.log("Unable To Start The Server Due To: ", error.message);
     throw error;
