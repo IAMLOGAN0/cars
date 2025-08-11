@@ -9,7 +9,7 @@ function getTimezoneOffset(timezone) {
 }
 
 // Initialize Sequelize Object
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
+const sequelize = new Sequelize('mysql://root:uBREypARMNAfaHEvKFRUBsjprJMwTpOi@shuttle.proxy.rlwy.net:47345/railway', {
   dialect: "mysql",
   pool: {
     max: 512,
