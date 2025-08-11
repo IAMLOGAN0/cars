@@ -3,5 +3,6 @@
 /tmp/*
 /public/storage/
 /logs/*
+.env
 package-lock.json
 yarn.lock
