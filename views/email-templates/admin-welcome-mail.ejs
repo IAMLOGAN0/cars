@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to KIND Fund Admin Panel</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333;">
+
+<div style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <h2 style="color: #333;">Welcome to the KIND Fund Admin Panel!</h2>
+
+    <p>Dear <%= firstName %>,</p>
+
+    <p>We're excited to have you on board the KIND Fund admin team! Below are the details you need to access the admin
+        panel:</p>
+
+    <ul>
+        <li><strong>Login URL:</strong> <a href="<%= adminUrl %>/login" style="color: blue;">Click Here</a></li>
+        <li><strong>Username:</strong> <%= emailAddress %></li>
+        <li><strong>Temporary Password:</strong> <%= password %></li>
+    </ul>
+
+    <p>Please log in at your earliest convenience and change your password for security reasons. If you encounter any
+        issues or have questions, feel free to reach out to <a href="mailto:olivia.burt@youngcoe.com">olivia.burt@youngcoe.com</a>.
+    </p>
+
+    <p>We look forward to working together!</p>
+
+    <p>Best regards,<br>
+        The KIND Fund Team</p>
+</div>
+
+</body>
+</html>
