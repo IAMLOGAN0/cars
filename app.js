@@ -127,9 +127,9 @@ async function startServer() {
       // Global error handler
       app.use(errorHandler);
 
-      // Use Railway's PORT, fallback to _appPort if running locally
+      // ✅ Use Railway's assigned port
       const PORT = process.env.PORT || _appPort || 3000;
-      const HOST = '0.0.0.0'; // Important for Railway
+      const HOST = '0.0.0.0'; // Important: allow external connections
 
       console.log(`App port is ${PORT}`);
 
@@ -137,6 +137,7 @@ async function startServer() {
         console.log(`HTTP Server Started At ${_appProtocol}://${_appUrl}:${PORT}`);
       });
     }
+
 
   } catch (error) {
     console.log("Unable To Start The Server Due To: ", error.message);
